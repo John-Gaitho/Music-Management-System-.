@@ -22,7 +22,7 @@ class Album(Base):
     title = Column(String, nullable=False)
     artist_id = Column(Integer, ForeignKey('artists.id'))
 
-    artist = relationship('Artist', back_populates='albums')
+    artist = relationship('Artist', back_populates='albums') #  argument for relationship with the 
 
    
         
