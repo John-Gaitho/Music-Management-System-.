@@ -56,4 +56,17 @@ def find_albulm_by_id(album_id):
     album = Session.query(Album).get(album_id)
     Session.close() 
     return album
+
+
+def create_track(title, album_id):       # to create tracks
+    session = Session()
+    album = session.query(Album).get(album_id)
+    if album:
+        new_track = Track(title=title, album_id=album.id)
+        session.add(new_track)
+        session.commit()
+        session.close()
+    else:
+        print(f"Album with ID {album_id} not found.")
+
       
