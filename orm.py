@@ -70,3 +70,15 @@ def create_track(title, album_id):       # to create tracks
         print(f"Album with ID {album_id} not found.")
 
       
+def delete_track(track_id):      # to delete track by the id.
+    session = Session()
+    track = session.query(Track).get(track_id)
+    if track:
+        session.delete(track)
+        session.commit()
+        session.close()
+    else:
+        print(f"Track with ID not found.")
+
+
+
