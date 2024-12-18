@@ -7,3 +7,13 @@ def create_artist(name):
     session.add(new_artist)
     session.commit()
     session.close()
+
+def delete_artist(artist_id):
+    session = Session()
+    artist = session.query(Artist).get(artist_id)
+    if artist:
+        session.delete(artist)
+        session.commit()
+        session.close()
+    else:
+        print(f"Artist with ID {artist_id} not found.")
