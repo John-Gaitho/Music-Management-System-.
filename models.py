@@ -24,5 +24,10 @@ class Album(Base):
 
     artist = relationship('Artist', back_populates='albums') #  argument for relationship with the 
 
-   
-        
+class Track(Base):
+    __tablename__ = 'tracks'
+
+    id = Column(Integer, primary_key=True)
+    title = Column(String, nullable=False)
+    album_id = Column(Integer, ForeignKey('albums.id'))
+
