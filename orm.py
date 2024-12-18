@@ -78,7 +78,19 @@ def delete_track(track_id):      # to delete track by the id.
         session.commit()
         session.close()
     else:
-        print(f"Track with ID not found.")
+        print(f"Track with ID {track_id}  not found.")
 
 
+def get_all_tracks():
+    Session = Session()
+    tracks = Session.query(Track).all()
+    Session.close()
+    return tracks 
 
+def find_track_by_id(track_id):
+    Session = Session()
+    track = Session.query(Track).get(track_id)
+    Session.close()
+    return track
+
+                     
