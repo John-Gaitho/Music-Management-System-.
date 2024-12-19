@@ -2,7 +2,7 @@
 ### Developed by JOHN GAITHO (Music Producer & Developer).
 
 This is a Music Management System, a command-line interface (CLI) application designed to manage artists, albums, and tracks in a music database. It uses SQLAlchemy for database operations and SQLite as the database engine. The application allows you to create, delete, and view artists, albums, and tracks.
-This Music Management System is a command-line interface (CLI) application designed to manage artists, albums, and tracks in a music database. It uses SQLAlchemy for database operations and SQLite as the database engine. The application allows you to create, delete, and view artists, albums, and tracks.
+An artist can have multiple albums (one-to-many relationship), meaning one artist can release many albums. Each album can contain multiple tracks (one-to-many relationship), so an album can have many songs or pieces of music. Each track is associated with exactly one album (many-to-one relationship). This ensures that artists are connected to their albums.
 
 ## Table of Contents
 - [Features](#features)
@@ -37,7 +37,7 @@ Before running the application, you need to install the required dependencies:
 1. **Clone the repository**:
    - First, clone the repository to your local machine using Git.
 
-   ```bash
+   An artist can have multiple albums (one-to-many relationship), meaning one artist can release many albums. Each album can contain multiple tracks (one-to-many relationship), so an album can have many songs or pieces of music. Each track is associated with exactly one album (many-to-one relationship), and the album implicitly links back to the artist through its foreign key reference. This structure ensures that artists are connected to their albums,
    git clone https://github.com/John-Gaitho/Music-Management-System.git
    
    cd Music-Management-System
@@ -46,12 +46,14 @@ Before running the application, you need to install the required dependencies:
    ```bash
    pipenv install
    pipenv shell
+
    pip install click
   ```
 ### Add this code into the pipfile;
-  
+   ```bash
   click = "*"
 sqlalchemy = "*"
+```
 
 
 ###   How to Run
