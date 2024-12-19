@@ -1,11 +1,9 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from sqlalchemy import  Column, Integer, String, ForeignKey
+from sqlalchemy.orm import relationship
+from database import Base
 
 class Artist(Base):
-    __tablename__ = 'artists'
+    __tablename__ = 'artists'      # to specify the name of table in db.
 
     id = Column(Integer, primary_key=True)    # to define a column id which is an integer.
     name = Column(String, nullable=False)     # for name which cannot be null.
@@ -40,7 +38,3 @@ class Track(Base):
     def __repr__(self):
         return f"<Track(title={self.title}, album={self.album.title})>"
 
-DATABASE_URL = "sqlite:///music.db"
-engine = create_engine(DATABASE_URL, echo=True)
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)

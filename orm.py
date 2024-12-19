@@ -1,5 +1,5 @@
-from models import Artist, Album, Track, Session
-
+from models import Artist, Album, Track
+from database import Session
 
 def create_artist(name):
     session = Session()

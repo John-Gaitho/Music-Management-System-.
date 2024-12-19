@@ -103,7 +103,14 @@ cli.add_command(create_artist_cli)
 cli.add_command(delete_artist_cli)
 cli.add_command(list_artists)
 cli.add_command(find_artist)
-
+cli.add_command(create_album_cli)
+cli.add_command(delete_album_cli)
+cli.add_command(list_albums)
+cli.add_command(find_album)
+cli.add_command(create_track_cli)
+cli.add_command(delete_track_cli)
+cli.add_command(list_tracks)
+cli.add_command(find_track)
 
 if __name__ == '__main__':
     cli()
