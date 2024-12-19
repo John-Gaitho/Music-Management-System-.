@@ -63,5 +63,34 @@ def find_album(album_id):
     else:
         click.echo(f"Album with ID {album_id} not found.")
 
+@click.command()
+@click.argument('title')
+@click.argument('album_id', type=int)
+def create_track_cli(title, album_id):
+    create_track(title, album_id)
+    click.echo(f"Track '{title}' created successfully for Album ID {album_id}!")
 
+@click.command()
+@click.argument('track_id', type=int)
+def delete_track_cli(track_id):
+    delete_track(track_id)
+    click.echo(f"Track with ID {track_id} deleted successfully!")
+
+@click.command()
+def list_tracks():
+    tracks = get_all_tracks()
+    if tracks:
+        for track in tracks:
+            click.echo(f"ID: {track.id}, Title: {track.title}, Album: {track.album.title}")
+    else:
+        click.echo("No tracks found.")
+
+@click.command()
+@click.argument('track_id', type=int)
+def find_track(track_id):
+    track = find_track_by_id(track_id)
+    if track:
+        click.echo(f"Found Track: {track.title}, Album: {track.album.title}")
+    else:
+        click.echo(f"the ID {track_id} not found.")
 
