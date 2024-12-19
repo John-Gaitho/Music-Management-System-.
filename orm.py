@@ -2,14 +2,14 @@ from models import Artist, Album, Track
 from database import Session
 
 def create_artist(name):
-    session = Session()
+    session = Session() 
     new_artist = Artist(name=name)
     session.add(new_artist)
     session.commit()
     session.close()
 
 def delete_artist(artist_id):
-    session = Session()
+    session = Session() 
     artist = session.query(Artist).get(artist_id)
     if artist:
         session.delete(artist)
@@ -19,53 +19,52 @@ def delete_artist(artist_id):
         print(f"Artist with ID {artist_id} not found.")
 
 def get_all_artists():
-    session = Session()
+    session = Session()  
     artists = session.query(Artist).all()
     session.close()
     return artists
 
 def find_artist_by_id(artist_id):
-    session = Session()
+    session = Session()  # Use session
     artist = session.query(Artist).get(artist_id)
     session.close()
     return artist
 
 def create_album(title, artist_id):
-    Session = Session()
-    artist = Session.query(Artist).get(artist_id)
+    session = Session()  # Use session
+    artist = session.query(Artist).get(artist_id)
     if artist:
         new_album = Album(title=title, artist_id=artist.id)
-        Session.add(new_album)
-        Session.commit()
-        Session.close()
+        session.add(new_album)
+        session.commit()
+        session.close()
     else:
         print(f"Artist with ID {artist_id} not found.")
 
 def delete_album(album_id):
-    Session = Session() 
-    album = Session.query(Album).get(album_id)
+    session = Session()  # Use session
+    album = session.query(Album).get(album_id)
     if album:
-        Session.delete(album)
-        Session.commit()
-        Session.close()
+        session.delete(album)
+        session.commit()
+        session.close()
     else:
         print(f"Album with ID {album_id} not found.")
 
 def get_all_albums():
-    session = Session()
+    session = Session()  # Use session
     albums = session.query(Album).all()
     session.close()
     return albums
 
 def find_album_by_id(album_id):
-    Session = Session() 
-    album = Session.query(Album).get(album_id)
-    Session.close() 
+    session = Session()  # Use session
+    album = session.query(Album).get(album_id)
+    session.close() 
     return album
 
-
-def create_track(title, album_id):       # to create tracks
-    session = Session()
+def create_track(title, album_id):
+    session = Session()  # Use session
     album = session.query(Album).get(album_id)
     if album:
         new_track = Track(title=title, album_id=album.id)
@@ -75,28 +74,24 @@ def create_track(title, album_id):       # to create tracks
     else:
         print(f"Album with ID {album_id} not found.")
 
-      
-def delete_track(track_id):      # to delete track by the id.
-    session = Session()
+def delete_track(track_id):
+    session = Session()  # Use session
     track = session.query(Track).get(track_id)
     if track:
         session.delete(track)
         session.commit()
         session.close()
     else:
-        print(f"Track with ID {track_id}  not found.")
-
+        print(f"Track with ID {track_id} not found.")
 
 def get_all_tracks():
-    Session = Session()
-    tracks = Session.query(Track).all()
-    Session.close()
-    return tracks 
+    session = Session()  # Use session
+    tracks = session.query(Track).all()
+    session.close()
+    return tracks
 
 def find_track_by_id(track_id):
-    Session = Session()
-    track = Session.query(Track).get(track_id)
-    Session.close()
+    session = Session()  # Use session
+    track = session.query(Track).get(track_id)
+    session.close()
     return track
-
-                     
