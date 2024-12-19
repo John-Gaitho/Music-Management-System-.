@@ -38,12 +38,16 @@ Before running the application, you need to install the required dependencies:
 
    ```bash
    git clone https://github.com/John-Gaitho/Music-Management-System.git
+   
    cd Music-Management-System
    ```
-### Add into the pipfile;
+### run **pinenv install** , **pipenv shell** and pip **install click** in the terminal to install dependencies.
+
+### Add this into the pipfile;
    ```bash
-  click
-  sqlal
+  click = "*"
+sqlalchemy = "*"
+
 ```
 ###   How to Run
 To run the Music Management System, use the following command:
@@ -81,13 +85,8 @@ To find an artist by their ID:
 bash
 Copy code
 ```bash
-python cli.py find-artist-cli <artist_id>
+python cli.py find-artist <artist_id>
 ```
-Example:
-bash
-Copy code
-python cli.py find-artist-cli 1
-Album Management
 Create an Album:
 To create an album for a specific artist, use the following command with the album title and artist ID:
 bash
@@ -99,7 +98,7 @@ Example:
 bash
 Copy code
 ```bash
-python cli.py create-album-cli "Greatest Hits" 1
+python cli.py create-album-cli "christmas night" 1
 ```
 Delete an Album:
 To delete an album by ID:
@@ -112,46 +111,56 @@ Example:
 bash
 Copy code
 ```bash
-python cli.py delete-albumcli 1
+python cli.py delete-album-cli 1
 ```
 List all Albums:
 To list all albums in the system:
 bash
 Copy code
 ```bash
-python cli.py list-albums-cli
+python cli.py list-albums
 ```
 Find an Album by ID:
 To find an album by its ID:
 bash
 Copy code
+```bash
 python cli.py find-album <album_id>
-Track Management
+```
 Create a Track:
 To create a track for a specific album, use the following command with the track title and album ID:
 bash
 Copy code
-python cli.py create-track <track_title> <album_id>
+```bash
+python cli.py create-track-cli <track_title> <album_id>
+```
 Example:
 bash
 Copy code
+```bash
 python cli.py create-track "Track 1" 1
-Delete a Track:
+```
 To delete a track by ID:
 bash
 Copy code
-python cli.py delete-track <track_id>
+```bash
+python cli.py delete-track-cli <track_id>
+```
 Example:
 bash
 Copy code
-python cli.py delete-track 1
-List all Tracks:
+```bash
+python cli.py delete-track-cli 1
+```
 To list all tracks in the system:
 bash
 Copy code
+```bash
 python cli.py list-tracks
-Find a Track by ID:
+```
 To find a track by its ID:
 bash
 Copy code
+```bash
 python cli.py find-track <track_id>
+```
