@@ -7,3 +7,18 @@ from orm import create_artist, create_album, create_track, delete_artist, delete
 def create_artist_cli(name):
     create_artist(name)
     click.echo(f"Artist '{name}' has been created successfully!")
+
+@click.command()
+@click.argument('artist_id', type=int)
+def delete_artist_cli(artist_id):
+    delete_artist(artist_id)
+    click.echo(f"Artist deleted successfully!")
+
+@click.command()
+def list_artists():
+    artists = get_all_artists()
+    if artists:
+        for artist in artists:
+            click.echo(f"ID: {artist.id}, Name: {artist.name}")
+    else:
+        click.echo("No artists found.")    
