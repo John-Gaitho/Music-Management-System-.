@@ -1,4 +1,5 @@
 # Music Management System
+### Developed by JOHN GAITHO (Music Producer & Developer).
 
 This is a Music Management System, a command-line interface (CLI) application designed to manage artists, albums, and tracks in a music database. It uses SQLAlchemy for database operations and SQLite as the database engine. The application allows you to create, delete, and view artists, albums, and tracks.
 This Music Management System is a command-line interface (CLI) application designed to manage artists, albums, and tracks in a music database. It uses SQLAlchemy for database operations and SQLite as the database engine. The application allows you to create, delete, and view artists, albums, and tracks.
@@ -41,14 +42,18 @@ Before running the application, you need to install the required dependencies:
    
    cd Music-Management-System
    ```
-### run **pinenv install** , **pipenv shell** and pip **install click** in the terminal to install dependencies.
-
-### Add this into the pipfile;
+###  Install this in the terminal for dependencies.
    ```bash
+   pipenv install
+   pipenv shell
+   pip install click
+  ```
+### Add this code into the pipfile;
+  
   click = "*"
 sqlalchemy = "*"
 
-```
+
 ###   How to Run
 To run the Music Management System, use the following command:
 bash
@@ -71,7 +76,7 @@ Copy code
 ```bash
 python cli.py create-artist-cli "John swaga"
 ```
-Delete an Artist:
+
 To delete an artist by ID:
 bash
 Copy code
@@ -80,17 +85,16 @@ python cli.py delete-artist-cli <artist_id>
 ```
 Copy code
 python cli.py list-artists
-Find an Artist by ID:
+
 To find an artist by their ID:
 bash
 Copy code
 ```bash
 python cli.py find-artist <artist_id>
 ```
-Create an Album:
+
 To create an album for a specific artist, use the following command with the album title and artist ID:
-bash
-Copy code
+
 ```bash
 python cli.py create-album-cli <album_title> <artist_id>
 ```
@@ -100,7 +104,7 @@ Copy code
 ```bash
 python cli.py create-album-cli "christmas night" 1
 ```
-Delete an Album:
+
 To delete an album by ID:
 bash
 Copy code
@@ -108,28 +112,27 @@ Copy code
 python cli.py delete-album-cli <album_id>
 ```
 Example:
-bash
-Copy code
+
 ```bash
 python cli.py delete-album-cli 1
 ```
-List all Albums:
+
 To list all albums in the system:
-bash
+
 Copy code
 ```bash
 python cli.py list-albums
 ```
-Find an Album by ID:
+
 To find an album by its ID:
-bash
+
 Copy code
 ```bash
 python cli.py find-album <album_id>
 ```
-Create a Track:
+
 To create a track for a specific album, use the following command with the track title and album ID:
-bash
+
 Copy code
 ```bash
 python cli.py create-track-cli <track_title> <album_id>
@@ -164,3 +167,20 @@ Copy code
 ```bash
 python cli.py find-track <track_id>
 ```
+
+### Support and Contact Details
+Incase of any query, need for collaboration or issues with this code, feel free to reach me at jgaitho@gmail.com
+
+License
+MIT License
+
+Copyright © 2022 John-Gaitho
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
