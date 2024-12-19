@@ -1,7 +1,8 @@
 from sqlalchemy import *
-from sqlalchemy.orm import *
+from sqlalchemy.orm  import *
 from sqlalchemy.ext.declarative import *
-Base = declarative_base()
+from database import Base
+
 
 
 class Artist(Base):
@@ -39,3 +40,5 @@ class Track(Base):
 
     def __repr__(self):
         return f"<Track(title={self.title}, album={self.album.title})>"
+
+

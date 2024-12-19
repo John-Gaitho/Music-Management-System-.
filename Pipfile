@@ -4,12 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+click = "*"
+sqlalchemy = "*"
+
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
-[packages]
-click = "*"
-sqlalchemy = "*"
-sqlite = "*"
+
+
