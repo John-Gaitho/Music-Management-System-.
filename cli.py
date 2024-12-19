@@ -1,6 +1,11 @@
 import click
 from orm import create_artist, create_album, create_track, delete_artist, delete_album, delete_track, get_all_artists, get_all_albums, get_all_tracks, find_artist_by_id, find_album_by_id, find_track_by_id
 
+@click.group()
+def cli():
+    """CLI for interacting with Artists, Albums, and Tracks"""
+    pass
+
 
 @click.command()
 @click.argument('name')
@@ -94,3 +99,11 @@ def find_track(track_id):
     else:
         click.echo(f"the ID {track_id} not found.")
 
+cli.add_command(create_artist_cli)
+cli.add_command(delete_artist_cli)
+cli.add_command(list_artists)
+cli.add_command(find_artist)
+
+
+if __name__ == '__main__':
+    cli()

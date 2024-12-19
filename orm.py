@@ -41,7 +41,7 @@ def create_album(title, artist_id):
     else:
         print(f"Artist with ID {artist_id} not found.")
 
-def delete_albulm(album_id):
+def delete_album(album_id):
     Session = Session() 
     album = Session.query(Album).get(album_id)
     if album:
@@ -51,7 +51,13 @@ def delete_albulm(album_id):
     else:
         print(f"Album with ID {album_id} not found.")
 
-def find_albulm_by_id(album_id):
+def get_all_albums():
+    session = Session()
+    albums = session.query(Album).all()
+    session.close()
+    return albums
+
+def find_album_by_id(album_id):
     Session = Session() 
     album = Session.query(Album).get(album_id)
     Session.close() 
