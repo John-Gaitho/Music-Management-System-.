@@ -32,4 +32,36 @@ def find_artist(artist_id):
     else:
         click.echo(f"Artist with ID {artist_id} not found.")
 
+@click.command()                       # Album command.
+@click.argument('title')
+@click.argument('artist_id', type=int)
+def create_album_cli(title, artist_id):
+    create_album(title, artist_id)
+    click.echo(f"Album '{title}' created successfully for Artist ID {artist_id}!")
+
+@click.command()
+@click.argument('album_id', type=int)
+def delete_album_cli(album_id):
+    delete_album(album_id)
+    click.echo(f"Album with ID {album_id} deleted successfully!")
+
+@click.command()
+def list_albums():
+    albums = get_all_albums()
+    if albums:
+        for album in albums:
+            click.echo(f"ID: {album.id}, Title: {album.title}, Artist: {album.artist.name}")
+    else:
+        click.echo("No albums found.")
+
+@click.command()
+@click.argument('album_id', type=int)
+def find_album(album_id):
+    album = find_album_by_id(album_id)
+    if album:
+        click.echo(f"Found Album: {album.title}, Artist: {album.artist.name}")
+    else:
+        click.echo(f"Album with ID {album_id} not found.")
+
+
 
