@@ -37,7 +37,7 @@ Before running the application, you need to install the required dependencies:
 1. **Clone the repository**:
    - First, clone the repository to your local machine using Git.
 
-   An artist can have multiple albums (one-to-many relationship), meaning one artist can release many albums. Each album can contain multiple tracks (one-to-many relationship), so an album can have many songs or pieces of music. Each track is associated with exactly one album (many-to-one relationship), and the album implicitly links back to the artist through its foreign key reference. This structure ensures that artists are connected to their albums,
+   ```bash
    git clone https://github.com/John-Gaitho/Music-Management-System.git
    
    cd Music-Management-System
