@@ -22,3 +22,14 @@ def list_artists():
             click.echo(f"ID: {artist.id}, Name: {artist.name}")
     else:
         click.echo("No artists found.")    
+
+@click.command()
+@click.argument('artist_id', type=int)
+def find_artist(artist_id):
+    artist = find_artist_by_id(artist_id)
+    if artist:
+        click.echo(f"Found Artist: {artist.name}")
+    else:
+        click.echo(f"Artist with ID {artist_id} not found.")
+
+
